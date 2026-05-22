@@ -18,3 +18,87 @@ View your app in AI Studio: https://ai.studio/apps/cfb72ae5-8c16-41d6-a60e-0bdfa
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+   # Task 1: AI Website Copy & Structure Generator for Local Businesses
+
+## Project Overview: "The Story Café"
+* **Location:** Hyderabad, India  
+* **Core Objective:** Design and structure an interactive, mobile-responsive web application for a narrative-themed local café. The platform bridges traditional dining with dynamic AI elements, featuring a mood-aware digital assistant, seamless cart operations, a local community hub, and flexible subscription tiers.
+* 
+  ## 💻 Technical Stack & Ecosystem
+The platform is engineered using a robust, modern full-stack ecosystem optimized for rapid state synchronization, high-performance content rendering, and mobile-first responsiveness.
+### Frontend Architecture
+* **Library/Framework:** React.js (Functional components with Hooks API)
+* **Styling & UI Framework:** Tailwind CSS (Utilizing utility-first classes for rapid, responsive UI development)
+* **Icons & Assets:** React Icons / Lucide React
+* **State Management:** React Context API (For tracking global cart actions, filters, and user authentication state across views)
+
+### Backend & Cloud Infrastructure
+* **Database & Auth Layer:** Firebase Suite
+  * **Firebase Authentication:** Handles secure user login, session management, and profile state retention.
+  * **Cloud Firestore:** A NoSQL real-time document database storing user profiles, active subscription matrices, order histories, and the local community board feed.
+* **Hosting & Deployment:** Vercel / Netlify (CI/CD pipeline directly integrated with the GitHub repository)
+
+### AI Development & Frameworks
+* **Language Models:** Google Gemini API / OpenAI ChatGPT (Powering the cognitive, human-like mood recommendation engine)
+* **Prompt Orchestration:** Structured System Prompt Engineering (Zero-shot / Few-shot context mapping)
+
+To build the architecture of **The Story Café**, the following master persona prompt was injected into the LLM system to establish boundaries, tone, and domain expertise:
+
+```text
+Persona: You are an elite Full-Stack UI/UX Developer, Expert Prompt Engineer, and AI Conversation Designer.
+Task: Architect a highly interactive, responsive (mobile-first) website for "The Story Café" located in Hyderabad, India.
+Tone & Brand Voice: Warm, community-focused, literary, and engaging.
+Key Design Principles: High visual scannability, conversion-oriented layout, interactive user-state persistence, and elegant UI components.
+
+Generate the homepage Hero Section configuration for "The Story Café" based in Hyderabad, India. 
+1. Remove references to "Creamy Lemon Garlic Chicken" and "Fiery Dragon Paneer" from the primary landing view highlights.
+2. Feature "Crispy Paneer Fingers (₹361.90, Vegetarian)" and "Veg Lollipop (₹306.90, Vegetarian)" as the foundational featured spotlight items.
+3. Reposition the upcoming events announcement: Extract it from the bottom of the page and deploy it as a highly visible, micro-animated compact pop-up placed immediately adjacent to the primary Hero Statement. The copy must generate curiosity and drive clicks to explore the event narrative.
+
+Inject the provided full multi-category menu catalog for 'The Story Café' into the application schema. Organize items accurately by category: Chef's Special, Croissants, Sliders & Burgers, Appetizers, Quick Bites, Wraps/Stuffed Tortillas, Rice Bowls, Chinese Mains, Pizza, Pasta, and Sandwiches. 
+
+Apply the following UI/UX constraints:
+1. Strip all individual item thumbnails to keep the layout exceptionally clean and highly performant. Each list element must exclusively display: Item Name, Price (in INR), Vegetarian/Non-Vegetarian status indicator, and a prominent 'Add to Cart' button.
+2. Implement a 'Dietary Toggle' component acting as a Smart Filter. When activated, it must open a modular menu that instantly abstracts and hides items matching specified allergens or types (Gluten, Dairy, Nuts) rather than using ambiguous inline badges.
+3. Embed an explicit 'Reset Curations' functional controller that programmatically flushes all active filters and returns the menu layout to its default baseline state.
+
+Design the interactive architecture for the conversational AI Chatbot assistant embedded on the menu page. The assistant must operate using cognitive behavioral mapping rather than static keyword matching:
+1. Emulate a human brain's contextual awareness, interpreting user statements to infer mood, atmosphere preference, or current cognitive state (e.g., 'I need a pick-me-up', 'I am here for an intensive study session').
+2. Deliver highly personalized, narrative-driven food pairings based on this state assessment (e.g., matching an anxious/tired state with a double espresso + lemon tart, or a focused study state with calming chamomile tea + scone).
+3. The interface must transition gracefully to an isolated modal/page configuration when executing the 'Mood-Based Recommendation Quiz'.
+
+Construct a functional Customer Profile dashboard view containing distinct, organized user data clusters. 
+1. Render clear layout compartments displaying: Order History (past entries with timestamp and total bill), Active Subscriptions, and Reward tracking.
+2. Implement functional UI boundaries for the 'Edit Personal Info' state triggers and bind a structural 'Logout' routine wrapper.
+
+Architect the 'Community' and 'Subscription' modules under the following specifications:
+1. Community Board: Create a clean local interactive layout containing a 'Digital Community Board' for localized neighborhood event postings and a prominent 'Customer of the Month' spotlight card. Ensure the 'Join the Narrative' conversion button and the 'Post a Note' dynamic input box framework are fully responsive and functional.
+2. Subscription Portal: Clean up the module by completely purging the 'Active Chapters' block from the display layer. Build fully operational control endpoints for the 'Manage' menu actions and the 'Claim Reward' milestone routine.
+3. Payment Routing: Ensure that executing the 'Subscribe to Chapter' action intercepts the user interface flow and cleanly redirects the client state straight to the transactional payment processor interface.
+
+
+
+## 📦 Final AI-Generated Website Copy Set & Deliverables
+Below is the production-ready website copy and structural content set generated by the structured prompts documented above.
+### 1. Homepage & Hero Section Pop-Up
+* **Hero Headline:** "Where Every Flavor Tells a Story."
+* **Sub-headline:** "Welcome to Hyderabad's premier literary cafe hub, serving hand-crafted narratives and exceptional roasts."
+* **Featured Spotlight Items:** * Crispy Paneer Fingers (₹361.90) — *Crunchy, golden paneer strips paired with our house special dipping sauce.* [Add to Cart]
+  * Veg Lollipop (₹306.90) — *Spiced vegetable skewers fried to crisp perfection.* [Add to Cart]
+* **Micro-Animated Event Pop-Up Copy:** "Every flavor tells a story, and tonight a new chapter begins. 🎭 Tap here to discover this weekend's secret live acoustic and storytelling circle before seats vanish!"
+
+### 2. Services & "Mood-Based" Recommendation Engine
+When a user accesses the AI Assistant or launches the isolated quiz modal, the system serves the following pairing scripts based on inferred user states:
+* **The "Intensive Study/Focus" Track:** * *AI Response:* "Writing a masterclass chapter or cramming for exams? Let’s keep the mind sharp and calm."
+  * *Pairing Suggestion:* Calming Chamomile Tea + House Scone.
+* **The "Energy Pick-Me-Up" Track:** * *AI Response:* "Hitting a creative wall? Let's turn the page with a bold spark of energy."
+  * *Pairing Suggestion:* Double Espresso + Lemon Tart.
+
+### 3. High-Converting Call-To-Actions (CTAs) & Interface Copy
+* **Community Board Hub:** * Primary Button: `[Join the Narrative]` (Redirects users to the community membership registration screen)
+  * Interactive Submission Header: "Leave Your Mark" -> `[Post a Note]`
+* **Subscription Portal:**
+  * Active Management Trigger: `[Manage Subscription Account]`
+  * Milestone Incentive Handler: `[Claim Active Loyalty Reward]`
+  * Transactional Checkout Redirect: `[Subscribe to Chapter]` *(Programmatically routes user session directly to the secure payment processing screen)*
